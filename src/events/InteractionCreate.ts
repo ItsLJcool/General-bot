@@ -10,6 +10,8 @@ const interactionCreate: Event = {
 
         if (interaction.isButton()) return await registerButton(interaction);
 
+        if (interaction.isAnySelectMenu()) return await registerAnySelectMenu(interaction);
+
         console.log(interaction);
     },
 };
@@ -34,7 +36,17 @@ async function registerButton(interaction:any) {
         try {
             if (cmd.onButton) await cmd.onButton(interaction);
         } catch (err:any) {
-            new ErrorReport(`Failed to execute button interaction for \`${cmd.data.name}\`!`, err).emit(interaction);
+            new ErrorReport(`Failed to execute Button Interactions for \`${cmd.data.name}\`!`, err).emit(interaction);
+        }
+    });
+}
+
+async function registerAnySelectMenu(interaction:any) {
+    client.commands.forEach(async cmd => {
+        try {
+            if (cmd.onAnySelectMenu) await cmd.onAnySelectMenu(interaction);
+        } catch (err:any) {
+            new ErrorReport(`Failed to execute Selection Menus interaction for \`${cmd.data.name}\`!`, err).emit(interaction);
         }
     });
 }

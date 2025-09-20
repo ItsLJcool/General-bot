@@ -11,7 +11,7 @@ It comes with a lot of features already built in, such as:
 You will need to install these packages:
 ```bash
 npm i discord.js dotenv
-npm i -D tsx @types/node
+npm i -D tsx @types/node prisma
 ```
 Make sure you have TypeScript installed globally as well.
 ```bash
@@ -29,6 +29,7 @@ And that's it! You can now these commands for testing and building the bot:
 - `npm run dev` Run's the bot in Development Mode, watches for any changes in the files and reloads the bot!
 - `npm run build` Builds the bot for production
 - `npm run start` Runs the bot based on the current build.
+- `npm run prisma-dev-migrate` this is just a helper command that runs `npx prisma migrate dev --name` (in which you can input the name for the migration)
 
 ## Contributing
 You are welcome to fork and make Pull Requests to fix my shitty code if you want to.

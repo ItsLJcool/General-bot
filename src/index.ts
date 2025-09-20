@@ -2,7 +2,7 @@ import { Client, GatewayIntentBits, Collection, Message, TextChannel, BaseChanne
 import { reloadCommands } from "./commands/dev/reloadCommands";
 import { Command } from "./types/Command";
 import { initEvents } from "./deploy-commands";
-import { Pages } from "./utils/Pages";
+import PrismaManager from "./utils/PrismaManager";
 import "dotenv/config";
 
 
@@ -19,5 +19,7 @@ globalThis.DEFAULT_CONTAINER_COLOR = 0x00FF00;
 
 reloadCommands();
 initEvents();
+
+PrismaManager.init();
 
 client.login(process.env.TOKEN);

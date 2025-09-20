@@ -16,4 +16,5 @@ export interface Command {
   execute: (interaction: ChatInputCommandInteraction) => Promise<any>;
   
   onButton?: (interaction: ButtonInteraction) => Promise<any>;
+  onAnySelectMenu?: (interaction: ButtonInteraction) => Promise<any>;
 }
