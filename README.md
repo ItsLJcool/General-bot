@@ -26,7 +26,7 @@ DEV_GUILD_ID=<guild id here (for dev commands)>
 # We are using sqlite for easy local usage, but do whatever you want in Prisma lol.
 DATABASE_URL="file:./dev.db" # Used for local file storage, name it whatever you want?? Idk I don't fully understand Prisma LMAO
 ```
-Once you have all the packages installed, we need to setup the Prisma Client by running `npx prisma init` in the terminal. (if you don't have the `prisma` folder already, otherwise run the `npm run prisma-dev-migrate init` command)
+Once you have installed all the packages, and setup your `.env` file, run `npm run setup` in the terminal.
 
 And that's it! You can now these commands for testing and building the bot:
 - `npm run dev` Run's the bot in Development Mode, watches for any changes in the files and reloads the bot!

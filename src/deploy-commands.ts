@@ -16,7 +16,7 @@ export async function deployCommands() {
             console.log(`✅ Loaded ${global.length} global command(s).`);
         }
 
-        if (dev.length > 0) {
+        if (dev.length > 0 && process.env.DEV_GUILD_ID) {
             await rest.put(
                 Routes.applicationGuildCommands(
                     process.env.CLIENT_ID!,
